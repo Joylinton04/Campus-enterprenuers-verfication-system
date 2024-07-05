@@ -6,8 +6,8 @@ import ValidationPage from "../pages/ValidationPage";
 const Approute = () => {
   return (
     <Routes>
-        <Route path="/" element={<Login/>}/>
-        <Route path="/home" element={<Home/>}/>
+        {/* <Route path="/" element={<Login/>}/> */}
+        <Route path="/" element={<Home/>}/>
         <Route path="/verify" element={<ValidationPage/>}/>
     </Routes>
   )
