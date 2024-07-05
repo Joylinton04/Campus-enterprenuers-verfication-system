@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Baxrlow:wght@300;400;500;600;700&family=M+PLUS+Code+Latin:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff;
+    min-height: 100vh;
+}
+
+.home-screen {
+    height: calc(100vh - 200px);
+    width: 100%;
+}
+
+.verify-cover {
+    height: 50vh;
+    width: 100%;
+}

@@ -1,0 +1,64 @@
+import bgPhotos from '../assets/bg-photos-1.jpg'
+import Logo from '../assets/logo.png'
+import { NavLink } from 'react-router-dom'
+
+const Home = () => {
+
+  return (
+    <div className="min-h-screen w-full">
+      <div className="relative">
+      {/*  */}
+        <div className="home-screen relative text-[#f5f5f5]">
+          <img src={bgPhotos} alt="" className='-z-20 absolute top-0 left-0 w-full h-full object-cover object-center brightness-[0.45]'/>
+          <div className="flex justify-between items-center p-6">
+            <div className="text-2xl font-bold flex items-center justify-center">
+              <img src={Logo} alt=""className='w-9 h-9 object-cover object-center'/>
+              <h1>KNUST</h1>
+            </div>
+            <ul className="flex justify-between items-center gap-8 font-medium cursor-pointer">
+              <li><NavLink to="/home">Home</NavLink></li>
+              <li>About</li>
+              <li className='bg-orange-500 rounded-full py-2 px-4'>Become a student Enterpreuer</li>
+            </ul>
+          </div>
+          <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20">
+            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%]">We ensure e-commerce safety and Fraud Prevention among Students on campus</h1>
+            <div className="w-[70%] mt-2">This system helps students access information and verifies the legitimacy of student entrepreneurs to prevent fraud and ensure a safe campus environment</div>
+            <NavLink to="/verify"><button className="p-4 xxl:p-3 bg-orange-600 text-white font-semibold uppercase w-[200px] text-center mt-6 rounded">Get Started</button></NavLink>
+          </div>
+        </div>
+
+        <div className='flex gap-12 justify-center relative -top-12'>
+            <div className='flex flex-col max-w-[400px] shadow-sm'>
+              <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c]'>No.1 of universities</div>
+              <div className='text-slate-600 relative p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+            </div>
+            <div className='flex flex-col max-w-[400px] shadow-sm'>
+              <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c]'>No.1 of universities</div>
+              <div className='text-slate-600 relative p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+            </div>
+        </div>
+
+        <div className='flex justify-center gap-32 px-6 py-4 relative top-[90px] xxl:gap-6'>
+              <div className='uppercase text-3xl font-semibold xxl:w-[30%]'><span className='border-b-2 border-orange-600'>Your security</span> is our priority</div>
+              <div className='max-w-[600px] text-slate-600'>
+              We are committed to providing a safe and secure e-commerce experience on campus. Our system ensures the legitimacy of student entrepreneurs and prevents fraud, fostering a trustworthy environment for all students. By verifying the identity and authenticity of sellers, we protect buyers from scams and fraudulent activities. {/* Our robust security measures and constant monitoring create a reliable platform where you can shop and sell with confidence. */}
+              </div>
+        </div>
+        <div className='flex flex-col relative top-[120px] px-6 py-4'>
+            <div className='uppercase text-3xl font-semibold p-6 text-center'><span className='border-b-2 border-orange-600'>How</span> the system works</div>
+            <div className='text-slate-600 px-6'>To become recognized entrepreneurs on campus, students must go through a detailed registration process. This involves submitting their personal information, such as full name, student ID, academic program, and contact details, as well as any relevant business credentials or certifications. The system then verifies these credentials against the university's records to confirm their legitimacy.Once registered and verified, these student entrepreneurs are issued a unique certification badge that is displayed on their profile. Buyers can easily check this badge to ensure they are dealing with a verified seller. </div>
+        </div>
+
+        <div className='relative top-[120px]'>
+            <div>
+              <h1>Build your business Safety</h1>
+            </div>
+            <div></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Home;
