@@ -25,7 +25,7 @@ const ValidationPage = () => {
                 <li >Become a student Enterpreuer</li>
             </ul>
           </div>
-          <div className="relative top-[110px] h-full flex flex-col pb-6 px-8 xxl:top-20 lgg:top-[6rem] ssm:px-4">
+          <div className="relative top-[110px] h-full flex flex-col pb-6 px-8 xxl:top-20 lgg:top-[6rem] ssm:top-[50px] ssm:px-4">
             <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] lgg:w-[70%] ssm:w-[100%] ssm:text-3xl">Build your profile here and get a unique certified badge</h1>
           </div>
         </div>
