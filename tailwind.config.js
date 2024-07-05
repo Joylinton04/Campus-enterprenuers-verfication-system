@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        input:"#434BE7"
+    }
+    },
     screens: {
       '2xxl': {'max': '1535px'},
       'xxl': {'max': '1281px'},
@@ -15,11 +19,6 @@ export default {
       'sssm': {'max': '390px'},
       'ssssm': {'max': '330px'}
     },
-    colors: {
-      inputField: {
-        input:"#434BE7"
-      }
-    }
   },
   plugins: [],
 }

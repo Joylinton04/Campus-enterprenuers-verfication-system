@@ -18,7 +18,7 @@ const Home = () => {
             <ul className="flex justify-between items-center gap-8 font-medium cursor-pointer">
               <li><NavLink to="/home">Home</NavLink></li>
               <li>About</li>
-              <li className='bg-orange-500 rounded-full py-2 px-4'>Become a student Enterpreuer</li>
+              <li className='bg-orange-500 rounded-full py-2 px-4'>Become a Student Enterpreuer</li>
             </ul>
           </div>
           <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20">
@@ -31,31 +31,48 @@ const Home = () => {
         <div className='flex gap-12 justify-center relative -top-12'>
             <div className='flex flex-col max-w-[400px] shadow-sm'>
               <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c]'>No.1 of universities</div>
-              <div className='text-slate-600 relative p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+              <div className='text-slate-600 relative p-2 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
             </div>
             <div className='flex flex-col max-w-[400px] shadow-sm'>
               <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c]'>No.1 of universities</div>
-              <div className='text-slate-600 relative p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+              <div className='text-slate-600 relative p-2 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
             </div>
         </div>
 
         <div className='flex justify-center gap-32 px-6 py-4 relative top-[90px] xxl:gap-6'>
-              <div className='uppercase text-3xl font-semibold xxl:w-[30%]'><span className='border-b-2 border-orange-600'>Your security</span> is our priority</div>
-              <div className='max-w-[600px] text-slate-600'>
+              <div className='uppercase text-4xl font-semibold xxl:w-[30%]'><span className='border-b-2 border-orange-600'>Your security</span> is our priority</div>
+              <div className='max-w-[600px] text-slate-600 leading-loose'>
               We are committed to providing a safe and secure e-commerce experience on campus. Our system ensures the legitimacy of student entrepreneurs and prevents fraud, fostering a trustworthy environment for all students. By verifying the identity and authenticity of sellers, we protect buyers from scams and fraudulent activities. {/* Our robust security measures and constant monitoring create a reliable platform where you can shop and sell with confidence. */}
               </div>
         </div>
-        <div className='flex flex-col relative top-[120px] px-6 py-4'>
-            <div className='uppercase text-3xl font-semibold p-6 text-center'><span className='border-b-2 border-orange-600'>How</span> the system works</div>
-            <div className='text-slate-600 px-6'>To become recognized entrepreneurs on campus, students must go through a detailed registration process. This involves submitting their personal information, such as full name, student ID, academic program, and contact details, as well as any relevant business credentials or certifications. The system then verifies these credentials against the university's records to confirm their legitimacy.Once registered and verified, these student entrepreneurs are issued a unique certification badge that is displayed on their profile. Buyers can easily check this badge to ensure they are dealing with a verified seller. </div>
+        <div className='flex  relative top-[120px] px-6 py-4 justify-center gap-32 xxl:gap-6'>
+            <div className='uppercase text-4xl font-semibold p-6 text-center'><span className='border-b-2 border-orange-600'>How</span> the system works</div>
+            <div className='text-slate-600 px-6 max-w-[600px] leading-loose'>To become recognized entrepreneurs on campus, students must go through a detailed registration process. This involves submitting their personal information, such as full name, student ID, academic program, and contact details, as well as any relevant business credentials or certifications. The system then verifies these credentials against the university's records to confirm their legitimacy.Once registered and verified, these student entrepreneurs are issued a unique certification badge that is displayed on their profile. Buyers can easily check this badge to ensure they are dealing with a verified seller. </div>
         </div>
 
-        <div className='relative top-[120px]'>
+        <div className='relative top-[125px] px-6 py-4 shadow-md'>
             <div>
-              <h1>Build your business Safety</h1>
+              <h1 className="text-3xl text-center font-semibold"><span className='border-b border-input'>Students</span> Fraud experiences on Campus</h1>
             </div>
-            <div></div>
+            <div className='flex justify-center gap-8 mt-10'>
+              <div className='max-w-[420px] flex flex-col items-center gap-4'>
+                  <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
+                  <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
+                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+              </div>
+              <div className='max-w-[420px] flex flex-col items-center gap-4'>
+                  <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
+                  <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
+                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+              </div>
+              <div className='max-w-[420px] flex flex-col items-center gap-4'>
+                  <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
+                  <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
+                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+              </div>
+            </div>
         </div>
+
       </div>
     </div>
   )
