@@ -22,9 +22,9 @@ const Home = () => {
             </ul>
           </div>
           <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20 ssm:top-[40px] ssm:px-4">
-            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] mdd:w-[85%] ssm:w-full ssm:text-3xl">We ensure e-commerce safety and Fraud Prevention among Students on campus</h1>
-            <div className="w-[70%] mt-2 mdd:w-[95%] ssm:text-sm text-slate-[#f5f5f5]">This system helps students access information and verifies the legitimacy of student entrepreneurs to prevent fraud and ensure a safe campus environment</div>
-            <NavLink to="/verify"><button className="p-4 xxl:p-3 bg-orange-600 text-white font-semibold uppercase w-[200px] text-center mt-6 rounded mdd:w-[158px]">Get Started</button></NavLink>
+            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] mdd:w-[85%] ssm:w-full ssm:text-3xl sssm:text-2xl">We ensure e-commerce safety and Fraud Prevention among Students on campus</h1>
+            <div className="w-[70%] mt-2 mdd:w-[95%] ssm:text-sm text-slate-[#f5f5f5] sssm:text-xs">This system helps students access information and verifies the legitimacy of student entrepreneurs to prevent fraud and ensure a safe campus environment</div>
+            <NavLink to="/verify"><button className="p-4 xxl:p-3 bg-orange-600 text-white font-semibold uppercase w-[200px] text-center mt-6 rounded mdd:w-[158px] sssm:w-[100px] sssm:text-xs sssm:whitespace-nowrap">Get Started</button></NavLink>
           </div>
         </div>
 

@@ -1,14 +1,46 @@
-// import bgPhotos from '../assets/bg-photos-1.jpg'
 import bgPhotos from '../assets/verify-cover.jpg'
+import verifyImg from '../assets/verifiyImg.png'
 import Logo from '../assets/logo.png'
 import { NavLink } from 'react-router-dom'
 import EmailIcon from '@mui/icons-material/Email';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
 import SchoolIcon from '@mui/icons-material/School';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToData } from '../redux/credentials';
 
 const ValidationPage = () => {
+  const [firstName, setFirstName] = useState('')
+  const [OtherName, setOtherName] = useState('')
+  const [email, setEmail] = useState('')
+  const [studentEmail, setStudentEmail] = useState('')
+  const [indexNo, setIndexNo] = useState('')
   const [studentId, setStudentId] = useState('')
+  const [programme, setProgramme] = useState('')
+  const [year, setYear] = useState('100')
+  const [product, setProduct] = useState('')
+  const [bio, setBio] = useState('')
+  const [isOpen, setIsOpen] = useState(true)
+  const userInfo = useSelector(state => state.usersData.usersInfo)
+  const dispatch = useDispatch()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const id = userInfo.length ? userInfo[(userInfo.length - 1)].id + 1 : 1
+    dispatch(addToData({
+      id: id,
+      firstName: firstName,
+      OtherName: OtherName,
+      email: email,
+      studentEmail: studentEmail,
+      indexNo: indexNo,
+      programme: programme,
+      year: year,
+      product: product,
+      bio: bio,
+    }))
+    setIsOpen(prev => !prev)
+  }
 
   return (
     <div className="min-h-full">
@@ -30,8 +62,8 @@ const ValidationPage = () => {
           </div>
         </div>
 
-        <form className='px-8 flex justify-center items-center py-1 lgg:px-3 mdd:px-0'>
-            <div className='w-[85%] shadow rounded p-6 mdd:w-[95%]'>
+        <form className='px-8 flex justify-center items-center py-1 lgg:px-3 mdd:px-0' onSubmit={handleSubmit}>
+            <div className='w-[85%] shadow rounded p-6 mdd:w-[95%] sssm:w-full'>
                 <div className='mt-12 ssm:mt-6'>
                     <h1 className='capitalize text-3xl font-semibold'>Please fill all the inputs</h1>
                     <ul className='py-2 flex cursor-pointer'>
@@ -56,12 +88,16 @@ const ValidationPage = () => {
                             type="text" 
                             placeholder='first name' 
                             className='px-4 py-2 rounded outline-none w-[250px]' 
+                            value={firstName}
+                            onChange={e => setFirstName(e.target.value)}
                             required
                           />
                         <input 
                             type="text" 
                             placeholder='Other name' 
                             className='px-4 py-2 rounded outline-none w-[250px]' 
+                            value={OtherName}
+                            onChange={e => setOtherName(e.target.value)}
                             required
                           />
                     </div>
@@ -74,7 +110,9 @@ const ValidationPage = () => {
                         <input 
                             type="email"
                             placeholder='example005@gmail.com' 
+                            value={email}
                             className='px-4 py-2 rounded outline-none w-[350px] ssm:max-w-[280px]' 
+                            onChange={e => setEmail(e.target.value)}
                             required
                         />
                     </div>
@@ -86,7 +124,9 @@ const ValidationPage = () => {
                         <span><EmailIcon className=' text-[#434242c3]'/></span>
                         <input 
                             type="email" 
-                            placeholder='example005@st.knust.edu.gh' 
+                            placeholder='example005@st.knust.edu.gh'
+                            value={studentEmail} 
+                            onChange={e => setStudentEmail(e.target.value)}
                             className='px-4 py-2 rounded outline-none w-[350px] ssm:max-w-[280px]' 
                         required/>
                     </div>
@@ -99,7 +139,7 @@ const ValidationPage = () => {
                           <span><Grid3x3Icon className=' text-[#434242c3]'/></span>
                           <input 
                               type="number" 
-                              placeholder='73...' 
+                              placeholder='2072...' 
                               className='px-4 py-2 rounded outline-none min-w-[260px]' 
                               required
                               value={studentId}
@@ -108,12 +148,14 @@ const ValidationPage = () => {
                       </div>
                     </div>
                     <div className='flex flex-col gap-4'>
-                      <h2 className='text-lg'>Reference Number</h2>
+                      <h2 className='text-lg'>Index Number</h2>
                       <div className='flex gap-3 items-center'>
                           <span><Grid3x3Icon className=' text-[#434242c3]'/></span>
                           <input 
                             type="number" 
-                            placeholder='2097...' 
+                            placeholder='73...'
+                            value={indexNo} 
+                            onChange={e => setIndexNo(e.target.value)}
                             className='px-4 py-2 rounded outline-none min-w-[260px]' 
                             required
                           />
@@ -128,8 +170,10 @@ const ValidationPage = () => {
                           <span><SchoolIcon className=' text-[#434242c3]'/></span>
                           <input 
                               type="text" 
+                              value={programme}
                               placeholder='Bsc. Telecommunication engineering' 
                               className='px-4 py-2 rounded outline-none w-[350px] ssm:max-w-[280px]'
+                              onChange={e => setProgramme(e.target.value)}
                               required
                             />
                       </div>
@@ -140,7 +184,10 @@ const ValidationPage = () => {
                           <span><Grid3x3Icon className=' text-[#434242c3]'/></span>
                           <select 
                             className='px-4 py-2 rounded outline-none w-[250px]' 
-                            required>
+                            required
+                            value={year}
+                            onChange={e => setYear(e.target.value)}
+                            >
                             <option value="100">100</option>
                             <option value="200">200</option>
                             <option value="300">300</option>
@@ -154,6 +201,8 @@ const ValidationPage = () => {
                     <div className='flex gap-6'>
                         <input
                             type="text" 
+                            value={product}
+                            onChange={e => setProduct(e.target.value)}
                             placeholder='Baggy Jeans' 
                             className='px-4 py-2 rounded outline-none w-[250px]' 
                             required
@@ -165,17 +214,49 @@ const ValidationPage = () => {
                     <h2 className='text-2xl font-semibold'>About</h2>
                     <div className='flex gap-6'>
                       <textarea
+                          value={bio}
                           placeholder='Write about you...' 
                           className='px-4 py-2 rounded outline-none w-[450px] h-[200px] ssm:max-w-[320px]' 
+                          onChange={e => setBio(e.target.value)}
                           required
                       />
                   </div>
                 </div>
                <div className='mt-4'>
-                <button type="submit" className='px-4 py-1 h-10 text-center rounded text-[#f5f5f5] bg-input cursor-pointer'>Save and Submit</button>
+               <button className='px-4 py-1 h-10 text-center rounded text-[#f5f5f5] bg-input cursor-pointer'>Save and Submit
+                </button>
                </div>
             </div>
         </form>
+        {/* Overlay */}
+        {isOpen && 
+          <div className='fixed top-0 left-0 z-20 w-full h-full bg-[#21212190]'>
+            <div className='flex justify-center items-center h-full w-full px-4 ssm:p-2'>
+              <div className='w-[920px] mdd:w-[800px] h-[610px] lgg:h-[550px] bg-white rounded flex shadow ssm:flex-wrap ssm:h-full ssm:p-2 sssm:gap-1'>
+                  <div className='w-[55%] bg-input h-full p-4 text-white flex flex-col justify-between items-center ssm:flex-1 ssm:h-1/2'>
+                    <h1 className='text-4xl font-semibold capitalize lgg:text-3xl sssm:text-2xl'>Be a Student Enterprenuer now</h1>
+                    <div className='w-56 h-60'>
+                      <img src={verifyImg} alt="" className='w-full h-full rounded-[50%] object-cover object-center'/>
+                    </div>
+                  </div>
+                  <div className='w-full h-full flex flex-col items-center p-4 justify-center ssm:flex-1 ssm:h-1/2'> 
+                      <div className='flex flex-col gap-10 sssm:gap-6'>
+                        <div className='flex flex-col gap-6'>
+                          <h1 className='text-center text-slate-600 font-semibold text-3xl sssm:text-2xl'>Recieve an Email from KNUST</h1>
+                          <p className='text-center text-slate-500 sssm:text-sm'>Receiving an email confirms that your verification has been successfully completed and you are now verified.</p>
+                        </div>
+                        <div className='flex flex-col gap-6 items-center sssm:gap-2'>
+                          <button className='px-6 py-4 sssm:px-4 sssm:py-2 sssm:w-[220px] mdd:py-3 text-[#f5f5f5] bg-green-600 rounded w-[360px] lgg:w-[300px]'>Receive an Email</button>
+                          <button className='px-6 py-4 ssssm:px-4 sssm:py-2 sssm:w-[220px] mdd:py-3 text-[#f5f5f5] bg-red-600 rounded w-[360px] lgg:w-[300px]' onClick={() => setIsOpen(prev => !prev)}>Cancel</button>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        }
+
+
     </div>
   )
 }
