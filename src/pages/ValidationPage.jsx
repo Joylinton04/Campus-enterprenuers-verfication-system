@@ -20,12 +20,16 @@ const ValidationPage = () => {
   const [year, setYear] = useState('100')
   const [product, setProduct] = useState('')
   const [bio, setBio] = useState('')
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const userInfo = useSelector(state => state.usersData.usersInfo)
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    setIsOpen(prev => !prev)
+  }
+
+  const handleVerification = () => {
     const id = userInfo.length ? userInfo[(userInfo.length - 1)].id + 1 : 1
     dispatch(addToData({
       id: id,
@@ -246,7 +250,9 @@ const ValidationPage = () => {
                           <p className='text-center text-slate-500 sssm:text-sm'>Receiving an email confirms that your verification has been successfully completed and you are now verified.</p>
                         </div>
                         <div className='flex flex-col gap-6 items-center sssm:gap-2'>
-                          <button className='px-6 py-4 sssm:px-4 sssm:py-2 sssm:w-[220px] mdd:py-3 text-[#f5f5f5] bg-green-600 rounded w-[360px] lgg:w-[300px]'>Receive an Email</button>
+                          <button 
+                            onClick={() => handleVerification()}
+                            className='px-6 py-4 sssm:px-4 sssm:py-2 sssm:w-[220px] mdd:py-3 text-[#f5f5f5] bg-green-600 rounded w-[360px] lgg:w-[300px]'>Receive an Email</button>
                           <button className='px-6 py-4 ssssm:px-4 sssm:py-2 sssm:w-[220px] mdd:py-3 text-[#f5f5f5] bg-red-600 rounded w-[360px] lgg:w-[300px]' onClick={() => setIsOpen(prev => !prev)}>Cancel</button>
                         </div>
                       </div>
