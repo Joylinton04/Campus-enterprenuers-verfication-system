@@ -10,19 +10,18 @@ const Home = () => {
       {/*  */}
         <div className="home-screen relative text-[#f5f5f5]">
           <img src={bgPhotos} alt="" className='-z-20 absolute top-0 left-0 w-full h-full object-cover object-center brightness-[0.45]'/>
-          <div className="flex justify-between items-center p-6">
+          <div className="flex justify-between items-center p-6 ssssm:p-2">
             <div className="text-2xl font-bold flex items-center justify-center">
               <img src={Logo} alt=""className='w-9 h-9 object-cover object-center'/>
               <h1>KNUST</h1>
             </div>
             <ul className="flex justify-between items-center gap-8 font-medium cursor-pointer ssm:hidden">
-              <li><NavLink to="/home">Home</NavLink></li>
-              <li>About</li>
-              <li className='bg-orange-500 rounded-full py-2 px-4'>Become a Student Enterpreuer</li>
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/student-enterprenuers" className='bg-orange-500 rounded-full py-2 px-4'>Student Enterprenuers</NavLink></li>
             </ul>
           </div>
-          <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20 ssm:top-[40px] ssm:px-4">
-            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] mdd:w-[85%] ssm:w-full ssm:text-3xl sssm:text-2xl">We ensure e-commerce safety and Fraud Prevention among Students on campus</h1>
+          <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20 ssm:top-[38px] sssm:top-[15px] ssm:px-4 ssssm:top-[20px]">
+            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] mdd:w-[85%] ssm:w-full ssm:text-3xl sssm:text-2xl ssssm:text-lg">We ensure e-commerce safety and Fraud Prevention among Students on campus</h1>
             <div className="w-[70%] mt-2 mdd:w-[95%] ssm:text-sm text-slate-[#f5f5f5] sssm:text-xs">This system helps students access information and verifies the legitimacy of student entrepreneurs to prevent fraud and ensure a safe campus environment</div>
             <NavLink to="/verify"><button className="p-4 xxl:p-3 bg-orange-600 text-white font-semibold uppercase w-[200px] text-center mt-6 rounded mdd:w-[158px] sssm:w-[100px] sssm:text-xs sssm:whitespace-nowrap">Get Started</button></NavLink>
           </div>
