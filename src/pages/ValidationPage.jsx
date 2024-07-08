@@ -20,7 +20,7 @@ const ValidationPage = () => {
   const [year, setYear] = useState('100')
   const [product, setProduct] = useState('')
   const [bio, setBio] = useState('')
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const userInfo = useSelector(state => state.usersData.usersInfo)
