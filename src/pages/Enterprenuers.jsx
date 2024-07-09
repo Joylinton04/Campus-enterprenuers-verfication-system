@@ -7,14 +7,21 @@ import { useDispatch, useSelector } from 'react-redux'
 const Enterprenuers = () => {
   const usersInfo = useSelector(state => state.usersData.usersInfo)
   const dispatch = useDispatch()
-  console.log(usersInfo)
+  
 
-  const users = [
-    { fullName: 'John Doe', programme: 'Computer Science', year: '3', product: 'Laptop', certified: true },
-    { fullName: 'Jane Smith', programme: 'Engineering', year: '2', product: 'Calculator', certified: false },
-    { fullName: 'Sam Wilson', programme: 'Business', year: '1', product: 'Textbook', certified: true },
-    // Add more users as needed
-  ];
+
+  // const users = [
+  //   { 
+  //     fullName: 'Kofi Mensah', 
+  //     programme: 'Computer Science', 
+  //     year: '3', 
+  //     product: 'Laptop', 
+  //     certified: true 
+  //   },
+  //   { fullName: 'Esther Smith', programme: 'Computer Engineering', year: '2', product: 'Calculator', certified: false },
+  //   { fullName: 'Black Sheriff', programme: 'Business', year: '1', product: 'Textbook', certified: true },
+  //   // Add more users as needed
+  // ];
 
   return (
     <div className='min-h-screen'>
@@ -27,17 +34,17 @@ const Enterprenuers = () => {
             </div>
             <ul className="flex justify-between gap-8 font-medium cursor-pointer ssm:hidden">
               <li><NavLink to="/">Home</NavLink></li>
-                <li>About</li>
+              <li className='font-bold'><NavLink to="/feedback">Feedback</NavLink></li>
                 <li><NavLink to="/student-enterprenuers" className='bg-orange-500 rounded-full py-2 px-4'>Student Enterprenuers</NavLink></li>
             </ul>
           </div>
           <div className="relative top-[110px] h-full flex flex-col pb-6 px-8 xxl:top-20 lgg:top-[6rem] ssm:top-[50px] ssm:px-4 sssm:top-[35px] ssssm:top-[15px]">
-            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[50%] lgg:w-[70%] ssm:w-[100%] ssm:text-3xl sssm:text-3xl ssssm:text-lg">Build your profile here and get a unique certified badge</h1>
+            <h1 className="uppercase text-5xl xxl:text-4xl font-bold w-[80%] lgg:w-[70%] ssm:w-[100%] ssm:text-3xl sssm:text-3xl ssssm:text-lg">Certified Students Enterpreneurs</h1>
           </div>
         </div>
 
     <div className="container mx-auto p-4 sm:p-8">
-      <h1 className="text-3xl uppercase font-bold mb-5">Certified Users</h1>
+      <h1 className="text-3xl uppercase font-bold mb-5">Certified Enterprenuers</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200 rounded-lg">
           <thead className="bg-gray-200">
@@ -50,9 +57,9 @@ const Enterprenuers = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {usersInfo.map((user, index) => (
               <tr key={index} className="text-center">
-                <td className="py-4 px-4 border-b">{user.fullName}</td>
+                <td className="py-4 px-4 border-b">{user?.firstName + ' ' + user?.OtherName}</td>
                 <td className="py-4 px-4 border-b">{user.programme}</td>
                 <td className="py-4 px-4 border-b">{user.year}</td>
                 <td className="py-4 px-4 border-b">{user.product}</td>

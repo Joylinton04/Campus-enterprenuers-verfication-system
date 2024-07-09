@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import EmailIcon from '@mui/icons-material/Email';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
 import SchoolIcon from '@mui/icons-material/School';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToData } from '../redux/credentials';
 
@@ -22,13 +22,14 @@ const ValidationPage = () => {
   const [bio, setBio] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-
+  const [certified, setIsCertified] = useState(true)
   const userInfo = useSelector(state => state.usersData.usersInfo)
+
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setIsOpen(prev => !prev) 
+    setIsOpen(prev => !prev)
   }
 
   const success = () => {
@@ -54,16 +55,17 @@ const ValidationPage = () => {
         // Redirect to home page
         window.location.pathname = '/student-enterprenuers'
       }, 1000)
-    }, 5000)
+    }, 7000)
   };
   
 
   const handleVerification = () => {
-    const id = userInfo.length ? userInfo[(userInfo.length - 1)].id + 1 : 1
+    const id = userInfo.length ? userInfo[userInfo.length - 1].id + 1 : 1;
+  
     dispatch(addToData({
       id: id,
       firstName: firstName,
-      OtherName: OtherName,
+      otherName: OtherName,
       email: email,
       studentEmail: studentEmail,
       indexNo: indexNo,
@@ -71,10 +73,13 @@ const ValidationPage = () => {
       year: year,
       product: product,
       bio: bio,
-    }))
-    setIsLoading(prev => !prev)
-    success()
-  }
+      certified: certified
+    }));
+  
+    setIsLoading(prev => !prev);
+    success();
+  };
+  
 
   return (
     <div className="min-h-full">
@@ -86,7 +91,7 @@ const ValidationPage = () => {
               <h1>KNUST</h1>
             </div>
             <ul className="flex justify-between gap-8 font-medium cursor-pointer ssm:hidden">
-              <li><NavLink to="/home">Home</NavLink></li>
+              <li><NavLink to="/">Home</NavLink></li>
                 <li>About</li>
                 <li><NavLink to="/student-enterprenuers" className='bg-orange-500 rounded-full py-2 px-4'>Student Enterprenuers</NavLink></li>
             </ul>
@@ -222,9 +227,9 @@ const ValidationPage = () => {
                             value={year}
                             onChange={e => setYear(e.target.value)}
                             >
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                            <option value="300">300</option>
+                            <option value="100">1</option>
+                            <option value="200">2</option>
+                            <option value="300">3</option>
                           </select>
                       </div>
                     </div>

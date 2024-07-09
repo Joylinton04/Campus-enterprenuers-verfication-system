@@ -16,8 +16,9 @@ const Home = () => {
               <h1>KNUST</h1>
             </div>
             <ul className="flex justify-between items-center gap-8 font-medium cursor-pointer ssm:hidden">
-              <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="/student-enterprenuers" className='bg-orange-500 rounded-full py-2 px-4'>Student Enterprenuers</NavLink></li>
+              <li className='font-bold'><NavLink to="/">Home</NavLink></li>
+              <li className='font-bold'><NavLink to="/feedback">Feedback</NavLink></li>
+              <li className='font-bold'><NavLink to="/student-enterprenuers" className='bg-orange-500 rounded-full py-2 px-4'>Student Enterprenuers</NavLink></li>
             </ul>
           </div>
           <div className="relative top-[150px] h-full flex flex-col pb-6 px-8 xxl:top-20 ssm:top-[38px] sssm:top-[15px] ssm:px-4 ssssm:top-[20px]">
@@ -30,12 +31,17 @@ const Home = () => {
         <div className='flex gap-12 justify-center relative -top-12 mdd:flex-wrap'>
             <div className='flex flex-col max-w-[400px] shadow-sm'>
               <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c]'>No.1 of universities</div>
-              <div className='text-slate-600 relative p-2 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+              <div className='text-slate-600 relative p-2 leading-relaxed'>Our university ranks number one in the region for its exceptional academic performance, innovative research, and vibrant student life.</div>
             </div>
             <div className='flex flex-col max-w-[400px] shadow-sm'>
-              <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c] bg-slate-500'>No.1 of universities</div>
-              <div className='text-slate-600 relative p-2 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum incidunt assumenda aspernatur possimus cum? Eum tempora natus nobis quia odio reiciendis, autem facere nesciunt! Accusantium aliquid atque velit molestias eveniet?</div>
+            <div className='text-white font-semibold text-center p-3 bg-[#f0f8ff2c] bg-slate-500'>
+              Top-Ranked Institution
             </div>
+            <div className='text-slate-600 relative p-2 leading-relaxed'>
+              Our university is recognized as a leading institution for its outstanding academic achievements, innovative research, and vibrant campus life.
+            </div>
+        </div>
+
         </div>
 
         <div className='flex justify-center gap-32 px-6 py-4 relative top-[90px] xxl:gap-6 mdd:flex-wrap'>
@@ -57,17 +63,17 @@ const Home = () => {
               <div className='max-w-[420px] flex flex-col items-center gap-4'>
                   <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
                   <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
-                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+                  <p className='text-slate-600 leading-relaxed'>I was scammed on campus during my first year when a student entrepreneur advertised a product with misleading specifications, and I ended up falling for it.</p>
               </div>
               <div className='max-w-[420px] flex flex-col items-center gap-4'>
                   <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
                   <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
-                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+                  <p className='text-slate-600 leading-relaxed'>During my second year, I bought a second-hand smartphone from a fellow student who claimed it was in perfect working condition. Unfortunately, the phone had several hidden issues, and I had to spend a lot on repairs.</p>
               </div>
               <div className='max-w-[420px] flex flex-col items-center gap-4'>
                   <div className='w-16 h-16 rounded-[50%] bg-slate-400'></div>
                   <h1 className='text-center text-lg font-semibold'>Anonymous</h1>
-                  <p className='text-slate-600 leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque et culpa maxime voluptatibus, deleniti itaque officiis similique fuga dolore id eius eum. Quod, saepe eligendi velit eaque quidem ab maxime!</p>
+                  <p className='text-slate-600 leading-relaxed'>I was tricked during my sophomore year when a student advertised an off-campus housing deal that seemed too good to be true. After paying the deposit, I discovered the property didn't exist.</p>
               </div>
             </div>
         </div>

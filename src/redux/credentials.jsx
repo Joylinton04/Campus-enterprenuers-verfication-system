@@ -1,7 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  usersInfo:[]
+  usersInfo:[
+    {
+      firstName: 'Joy',
+      OtherName: 'Adu Atakora',
+      programme: 'Telecommunication Engineering',
+      year: 1,
+      product: 'Laptop',
+      certified: true
+    },
+    {
+      firstName: 'Nana',
+      OtherName: 'Addo',
+      programme: 'Business',
+      year: 1,
+      product: 'Books',
+      certified: true
+    }
+  ]
 }
 
 export const userSlice = createSlice({
@@ -9,7 +26,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     addToData: (state, action) => {
-        const info = state.usersInfo.find(data => data.id === action.payload.id)
         state.usersInfo.push(action.payload)
     }
   }
